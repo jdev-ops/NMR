@@ -11,20 +11,7 @@ def test_all():
     test_suite = test_loader.discover('tests', pattern='test_*.py')
     return test_suite
 
-ext_modules=[
-    CUDAExtension('neural_renderer.cuda.load_textures', [
-        'neural_renderer/cuda/load_textures_cuda.cpp',
-        'neural_renderer/cuda/load_textures_cuda_kernel.cu',
-        ]),
-    CUDAExtension('neural_renderer.cuda.rasterize', [
-        'neural_renderer/cuda/rasterize_cuda.cpp',
-        'neural_renderer/cuda/rasterize_cuda_kernel.cu',
-        ]),
-    CUDAExtension('neural_renderer.cuda.create_texture_image', [
-        'neural_renderer/cuda/create_texture_image_cuda.cpp',
-        'neural_renderer/cuda/create_texture_image_cuda_kernel.cu',
-        ]),
-    ]
+ext_modules=[]
 
 setup(
     description='PyTorch implementation of "A 3D mesh renderer for neural networks"',
